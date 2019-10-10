@@ -1,5 +1,5 @@
 # Media_Automation
-Instrucctions and code snippets in order to automate your media collection.
+Instructions and code snippets in order to automate your media collection.
 
 Network Infrastructure.
 The way my media device are setup are as follows
@@ -12,14 +12,34 @@ The way my media device are setup are as follows
   Qbittorrent - Torrent Downloading Program
   Deluge  - Torrent Downloading Program
   MedusaPY - Automatic TV Media Management
+  Auto VPN Connection.
 
 3. VPN Provider - (NordVPN)  
 
-
-
 ================ Media Library - Setup ================
 I'm presuming that you have some content to start with.
-The following is the best way to name and setup your media content
+My folder structure is in the following format.
+
+/mnt/
+/mnt/media/ - Samba shared folder.
+/mnt/media/downloading - Base downloading folder for your torrent programs to use.
+/mnt/media/downloading/TV - 
+/mnt/media/downloading/TV/Complete
+/mnt/media/downloading/TV/Downloading
+/mnt/media/downloading/TV/TorrentFiles
+/mnt/media/downloading/TV/TorrentFiles/Auto
+/mnt/media/downloading/TV/TorrentFiles/Complete
+/mnt/media/downloading/TV/TorrentFiles/Downloading
+/mnt/media/downloading/Movies
+/mnt/media/downloading/Movies/Complete
+/mnt/media/downloading/Movies/Downloading
+/mnt/media/downloading/Movies/TorrentFiles
+/mnt/media/downloading/Movies/TorrentFiles/Auto
+/mnt/media/downloading/Movies/TorrentFiles/Complete
+/mnt/media/downloading/Movies/TorrentFiles/Downloading
+/mnt/media/Library/
+/mnt/media/Library/TV
+/mnt/media/Library/Movies
 
 Movies---
 Have your folder for movies and inside that is all your movies in folders of the movie name and year
@@ -77,7 +97,7 @@ click apply you should be able to connect now.
 
 ================ Samba - Setup ================
 
-by sharing your media folders using samba you make them accessible accross your network for tool like your "Auto Downloader" to access.
+By sharing your media folders using samba you make them accessible accross your network for devices like your "Auto Downloader" to access.
 -https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!
 
 Your server is nearly completely setup.
@@ -88,7 +108,36 @@ Your server is nearly completely setup.
 On your auto downloader you will need to mount your newly created samba shares
 -https://askubuntu.com/questions/157128/proper-fstab-entry-to-mount-a-samba-share-on-boot
 
+
+================ Folder Structure ================
+
+My folder structure is as follows
+/mnt/
+/mnt/media/ - Samba shared folder.
+/mnt/media/downloading - Base downloading folder for your torrent programs to use.
+/mnt/media/downloading/TV - 
+/mnt/media/downloading/TV/Complete
+/mnt/media/downloading/TV/Downloading
+/mnt/media/downloading/TV/TorrentFiles
+/mnt/media/downloading/TV/TorrentFiles/Auto
+/mnt/media/downloading/TV/TorrentFiles/Complete
+/mnt/media/downloading/TV/TorrentFiles/Downloading
+/mnt/media/downloading/Films
+/mnt/media/downloading/Films/Complete
+/mnt/media/downloading/Films/Downloading
+/mnt/media/downloading/Films/TorrentFiles
+/mnt/media/downloading/Films/TorrentFiles/Auto
+/mnt/media/downloading/FilmsTorrentFiles/Complete
+/mnt/media/downloading/Films/TorrentFiles/Downloading
+/mnt/media/Library/
+/mnt/media/Library/TV
+/mnt/media/Library/Films
+
+
+
 ================ Qbittorrent - Setup ================
+
+
 ================ Deluge - Setup ================
 ================ Medusa - Setup ================
 ================ Nord VPN - Setup ================
