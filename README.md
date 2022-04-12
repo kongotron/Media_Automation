@@ -1,5 +1,5 @@
 # Media_Automation
-This is a step by step tutorial and set of instructions on the software and code snippets used in order to automate the downloading of your media collection.
+This is a step by step tutorial of how to set up an autmated downloader just like mine.
 
 - 1. Network Infrastructure
 - 2. (Server) Media Library - Setup
