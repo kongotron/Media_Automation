@@ -236,15 +236,15 @@ simpledash(){
           }' | sudo tee -a /var/www/html/config.json
 }
 
-#structure
-#cifs
-#plex
-#qbittorrent
-#jackett
-#radarr
-#sonarr
-#tautilli
-#openpyn
-#simpledash
+structure
+cifs
+plex
+qbittorrent
+jackett
+radarr
+sonarr
+tautilli
+openpyn
+simpledash
 
 echo "installation complete visit http://$IP";
