@@ -9,8 +9,12 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/focal64"
 
     config.vm.network "forwarded_port", guest: 80, host: 8081
-    config.vm.network "forwarded_port", guest: 443, host: 443
-    config.vm.network "forwarded_port", guest: 3306, host: 3306
+    config.vm.network "forwarded_port", guest: 32400, host: 32400
+    config.vm.network "forwarded_port", guest: 7878, host: 7878
+    config.vm.network "forwarded_port", guest: 8989, host: 8989
+    config.vm.network "forwarded_port", guest: 9117, host: 9117
+    config.vm.network "forwarded_port", guest: 8181, host: 8181
+    config.vm.network "forwarded_port", guest: 8080, host: 8082
 
     config.ssh.forward_agent = true
 
