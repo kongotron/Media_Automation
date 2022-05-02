@@ -82,6 +82,9 @@ structure(){
   sudo mkdir -p "$DATAFOLDER";
   sudo mkdir -p "$DATAFOLDER/torrents/downloading";
   sudo mkdir -p "$DATAFOLDER/torrents/complete";
+  sudo mkdir -p "$DATAFOLDER/torrents/torrentfiles/downloading";
+  sudo mkdir -p "$DATAFOLDER/torrents/torrentfiles/complete";
+  sudo mkdir -p "$DATAFOLDER/torrents/torrentfiles/monitoring";
   sudo mkdir -p "$DATAFOLDER/video/movies";
   sudo mkdir -p "$DATAFOLDER/video/tv";
   sudo apt update;
@@ -261,6 +264,34 @@ sonarr-uninstall(){
   sudo deluser sonarr
 }
 
+bazarr(){
+
+}
+bazarr-uninstall(){
+
+}
+
+whisparr(){
+
+}
+whisparr-uninstall(){
+
+}
+
+lidarr(){
+
+}
+lidarr-uninstall(){
+
+}
+
+readarr(){
+
+}
+readarr-uninstall(){
+
+}
+
 jackett(){
   echo "################################################################################";
   echo "# Step 6 - Installing Jackett                                                  #";
@@ -424,7 +455,7 @@ simpledash(){
           		{
           			"alt" : "Tautilli",
           			"icon" : "fa fa-chart-line",
-          			"link" : "http://'"$IP"':'"TAUTULLIPORT"'/"
+          			"link" : "http://'"$IP"':'"$TAUTULLIPORT"'/"
           		},
           		{
           			"alt" : "Qbittorrent",
