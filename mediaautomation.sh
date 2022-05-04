@@ -775,53 +775,53 @@ readarr-uninstall() {
   whiptail --title "Confirmation" --msgbox "The Readarr software and settings have been removed" 8 80
 }
 
-#jackett() {
-#  echo "################################################################################"
-#  echo "# Installing Jackett                                                           #"
-#  echo "################################################################################"
-#  #Open port in firewall
-#  sudo ufw allow "$JACKETTPORT"
-#
-#  #Use the correct release for the architecture
-#  RELEASE=""
-#  if [ "$ARCH" = "amd64" ]; then
-#    #Compressed Release
-#    RELEASE=Jackett.Binaries.LinuxAMDx64.tar.gz
-#  else
-#    #Compressed Release
-#    RELEASE=Jackett.Binaries.LinuxARM32.tar.gz
-#  fi
-#
-#  #Get latest version
-#  VERSION=$(wget -q https://github.com/Jackett/Jackett/releases/latest -O - | grep "title>Release" | cut -d " " -f 4)
-#
-#  #Download repo
-#  sudo wget -Nc https://github.com/Jackett/Jackett/releases/download/"$VERSION"/"$RELEASE"
-#
-#  #Uncompress the download
-#  sudo tar -xzf "$RELEASE"
-#
-#  #Move it to the /opt directory
-#  sudo mv Jackett /opt/
-#
-#  #Delete the Downloaded file
-#  sudo rm -f "$RELEASE"
-#
-#  #Install the service
-#  sudo /opt/Jackett/install_service_systemd.sh
-#
-#  #Get the owner of the Jackett folder
-#  JACKETTUSER=$(stat -c "%U" /opt/Jackett/jackett)
-#
-#  #Change the Jackett port number
-#  #sudo sed -i "s/9117/$JACKETTPORT/g" /home/"$JACKETTUSER"/.config/Jackett/ServerConfig.json
-#
-#  #Restart Jackett service
-#  sudo service $JACKETTSERVICE restart
-#
-#  #Check if service is running
-#  servicecheck $JACKETTSERVICE
-#}
+jackett() {
+  echo "################################################################################"
+  echo "# Installing Jackett                                                           #"
+  echo "################################################################################"
+  #Open port in firewall
+  sudo ufw allow "$JACKETTPORT"
+
+  #Use the correct release for the architecture
+  RELEASE=""
+  if [ "$ARCH" = "amd64" ]; then
+    #Compressed Release
+    RELEASE=Jackett.Binaries.LinuxAMDx64.tar.gz
+  else
+    #Compressed Release
+    RELEASE=Jackett.Binaries.LinuxARM32.tar.gz
+  fi
+
+  #Get latest version
+  VERSION=$(wget -q https://github.com/Jackett/Jackett/releases/latest -O - | grep "title>Release" | cut -d " " -f 4)
+
+  #Download repo
+  sudo wget -Nc https://github.com/Jackett/Jackett/releases/download/"$VERSION"/"$RELEASE"
+
+  #Uncompress the download
+  sudo tar -xzf "$RELEASE"
+
+  #Move it to the /opt directory
+  sudo mv Jackett /opt/
+
+  #Delete the Downloaded file
+  sudo rm -f "$RELEASE"
+
+  #Install the service
+  sudo /opt/Jackett/install_service_systemd.sh
+
+  #Get the owner of the Jackett folder
+  JACKETTUSER=$(stat -c "%U" /opt/Jackett/jackett)
+
+  #Change the Jackett port number
+  #sudo sed -i "s/9117/$JACKETTPORT/g" /home/"$JACKETTUSER"/.config/Jackett/ServerConfig.json
+
+  #Restart Jackett service
+  sudo service $JACKETTSERVICE restart
+
+  #Check if service is running
+  servicecheck $JACKETTSERVICE
+}
 jackett-uninstall() {
   echo "################################################################################"
   echo "# Uninstalling Jackett                                                         #"
