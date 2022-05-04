@@ -6,6 +6,9 @@
 # This script installs the following software                                  #
 #                                                                              #
 # Radarr                                                                       #
+# Lidarr                                                                       #
+# Readarr                                                                      #
+# Whisparr                                                                     #
 # Sonarr                                                                       #
 # Jackett                                                                      #
 # Qbittorrent                                                                  #
@@ -14,7 +17,7 @@
 # Ombi                                                                         #
 # Simple Dash                                                                  #
 # OpenPyn                                                                      #
-# Cifs Utils                                                                   #
+# Cifs Utils & Samba                                                           #
 #                                                                              #
 # Author: Micheal Howlin                                                       #
 #                                                                              #
@@ -140,7 +143,7 @@ done
 
 structure() {
   echo "################################################################################"
-  echo "# Step 1 - Creating Folder Structure and Updating                              #"
+  echo "# Creating Folder Structure and Updating                              #"
   echo "################################################################################"
   #Create the folders
   sudo mkdir -p "$DATAFOLDER"
